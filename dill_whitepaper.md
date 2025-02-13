@@ -60,7 +60,7 @@ Dill is a new paradigm chain built on modular and sharding technologies. The ent
 - Bridge: A minimal-trust native verification bridge ensures interoperability between applications.
 
 <div align="center">
-<img src="./images/image1.png" width="60%" />
+<img src="./images/image1.jpg" width="60%" />
 </div>
 
 Dill introduces the concept of sharding to each layer:
