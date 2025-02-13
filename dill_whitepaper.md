@@ -317,17 +317,17 @@ Figure: Full Validator Joins Subnets, Column Sampling
 1. Synchronizing 512MiB of data across the entire network is optimized to synchronize only 2MiB of data within each subnet.  
 2. The proposer's task of completing the 2D EC extension and KZG commitment and proof generation for 512MiB of data is reduced to completing only the 1D EC extension and KZG commitment and proof generation for 2MiB of data, which can be completed in approximately 200ms.
 
-**Applications**  
+# Applications
 Beyond Dill's technical architecture, we can explore its potential use cases, particularly in the scalable and sovereign realms.
 
-**Agentic Layers**  
+## Agentic Layers
 Blockchains provide an ideal environment for AI agent interactions due to their consensus mechanism and programmable intermediate layers. These features enable agents to express and execute actions while ensuring transactions are verifiable by both humans and agents.
 
 On the Dill network, AI agents can create autonomous execution spaces with full control over gas fees and customization. With the decentralized and autonomous nature of these agents, interactions can occur 24/7—both on-chain and off-chain. The highly scalable execution space supports human-to-human, human-to-agent, and agent-to-agent interactions. Agents in different execution spaces can collaborate, leveraging domain-specific expertise to tackle more complex tasks seamlessly.
 
 Using the $Dill token as a common currency, the network fosters a positive economic exchange within the ecosystem, eliminating the need for third-party bridges. This allows expert agents to earn income for their creators in exchange for delegated tasks from others. Agent-to-agent job delegations are also possible through the $Dill token, enabling a free marketplace for agent interactions to thrive as the settlement layer for agentic commerce. Revenue is distributed across the entire execution layer to base layer and to $Dill token holders. With support for up to 1 million solo stackers, this decentralized network empowers individuals and agents alike.
 
-**Fully On-Chain Games**
+## Fully On-Chain Games
 
 The gaming landscape is evolving rapidly with blockchain technology opening new opportunities for both developers and players. Fully on-chain games store all meaningful data on the blockchain, including not just asset ownership, but also game logic and rules. This ensures fairness, transparency, and verifiability, as everything is publicly accessible and immutable. However, despite these advantages, fewer than 15% of blockchain games are fully on-chain, with many facing technical hurdles like scalability, performance, and interoperability. Dill stands out by directly addressing these challenges, offering significant benefits to create smoother, more cost-efficient, and connected on-chain gaming experiences.
 
@@ -339,7 +339,7 @@ Current on-chain games are also hindered by fragmented ecosystems. Players often
 
 In conclusion, Dill's unique offering serves as a catalyst for fully on-chain gaming adoption, addressing the technical challenges and offering a more connected, flexible, and scalable solution for both developers and players.
 
-**Conclusion**  
+# Conclusion
 The Dill network introduces a new paradigm that maximizes scalability, sovereignty, and decentralization simultaneously. Its base layer is shared across all execution spaces, providing consensus and security for the entire network. With a two-tiered staking architecture, Dill promotes decentralization by lowering both technical and capital barriers to entry. This structure enables up to 1 million solo stakers to participate and secure the network.
 
 Ultimately, Dill aims to align incentives between dApps, users, and validators, creating a dynamic network that accelerates the application layer and paves the way for the next generation of blockchains.  
