@@ -7,30 +7,69 @@ Dill
 
 *Version 0.1, Feb 13, 2025*
 
-# Abstract
+# 1.Abstract
 
-We propose Dill, a new blockchain paradigm focused on high scalability, sovereignty, and decentralization. While recent advancements in blockchain infrastructure in the past few years have aimed to solve the blockchain trilemma, few have achieved meaningful adoption among developers or, more critically, consumers.
+We propose Dill, a new paradigm chain based on a modular and sharded architecture, capable of achieving maximum scalability, sovereignty, and decentralization:
 
-It has become clear that, in addition to network scalability, sovereignty is crucial for maximizing protocol value capture, enabling customization, and supporting low-gas or gasless transactions. This is crucial for long term sustainable innovation and profitability of the protocol to provide best service to its users. Dill addresses these challenges with a blockchain network designed from the ground up, free from technical legacy constraints, and powered by proprietary innovations.
+- Maximum scalability: Dill supports up to 800,000 TPS, which is approximately 100 times the scalability of existing high-performance monolithic chains.
+- Maximum sovereignty: Each application deployed on Dill has its own dedicated execution environment, allowing it to capture the value of the execution layer while enabling custom execution environments.
+- Maximum decentralization: Dill supports up to 1 million validators while maintaining low barriers for staking and node operation, making it accessible to solo stakers.
 
-# **Background**
 
+Existing general-purpose chains have become a limitation for the development of on-chain applications. For example, Uniswap spends $1 billion in gas fees annually on Ethereum. By adopting the Unichain application chain model, Uniswap achieves greater scalability and sovereignty. It reduces execution gas fees, captures the value of the execution layer, and incorporates features such as built-in MEV redistribution mechanisms, millisecond-level pre-confirmation times, and transparent transaction ordering—features that general-purpose blockchains cannot support.
+
+With the addition of AI agents, on-chain applications will experience a significant increase in request volume. Current monolithic high-performance chains can only support a few thousand to 10,000 TPS and cannot accommodate application-specific customizations. The scalability and sovereignty limitations of general-purpose blockchains will become a barrier to the mass adoption of applications. It has become clear that, in addition to scalability, sovereignty is crucial for mass adoption.
+
+# 2.Background
 Ethereum revolutionized blockchain by separating application logic through virtual machines, transforming blockchains from single-purpose systems into programmable platforms for smart contracts. This innovation allowed applications to leverage blockchain security at minimal cost, leading to widespread dApp adoption. However, two critical challenges emerged:
 
-* Applications shifted from dedicated resources to shared blockchain infrastructure, creating significant scalability bottlenecks  
-* Applications lost sovereignty, with value and functionality constrained by the platform, leading to "fat protocols, thin applications"
+- Due to the blockchain trilemma, which limits the balance between scalability, security, and decentralization, blockchain systems could only achieve two out of these three properties at any given time, either prioritizing scalability or decentralization while sacrificing the other.
+- Applications lost sovereignty, shifting from dedicated resources to shared blockchain infrastructure, with value and functionality constrained by the platform, leading to "fat protocols, thin applications."
 
-Layer 2 solutions introduced a paradigm shift by further separating the execution layer, transforming blockchains into specialized layers focused on consensus, settlement, and data availability. While this improved scalability by orders of magnitude, applications remained constrained by platform limitations.
+After the failure to implement sharding on a single-chain system to solve the blockchain trilemma, Ethereum, in an effort to maintain decentralization, shifted to a Layer 2-centric modular solution to address scalability. On the other hand, high-performance chains like Solana continue to stick with monolithic chain design. achieving higher scalability by sacrificing decentralization, supporting thousands to tens of thousands of TPS.
 
-The modular approach transforms the need for an application to launch a complete chain into simply running a dedicated execution layer and a shared security layer. Just as dApps could access blockchain security at very low costs in the past, they can now achieve "sovereignty" at minimal expense. This shift has also encouraged more applications to move away from general-purpose execution platforms, as exemplified by Uniswap, the largest DEX platform.
 
-With the emergence of data availability and settlement layers, blockchain modularity has advanced significantly, making sharding technology practical. Sharding enables simultaneous optimization of decentralization and scalability. Dill represents a new paradigm built on modularity and sharding, allowing applications to achieve sovereignty as easily as deploying smart contracts while offering superior scalability compared to existing blockchains.
+The two approaches of Ethereum and Solana each have their pros and cons:
+
+Ethereum’s Layer 2-Centric Solution
+- Advantages:
+  - Solves scalability issues of the execution layer while maintaining decentralization.
+- Disadvantages:
+  - Layer 2 leads to fragmentation of the entire ecosystem.
+  - Ethereum’s influence on the application ecosystem and end users diminishes.
+
+Solana’s High-Performance Monolithic Solution
+- Advantages:
+  - Ensures ecosystem unity.
+  - No “intermediaries” between the platform and application ecosystem.
+- Disadvantages:
+  - Centralization issues.
+  - Scalability is limited, unable to support tens of thousands of TPS.
+
+Dill combines the advantages of both solutions by adopting a modular internal structure while maintaining an externally unified architecture. This approach ensures the high scalability and decentralization that modularity brings while avoiding the ecosystem fragmentation caused by Layer 2.
 
 <div align="center">
 <img src="./images/image1.png" width="60%" />
 </div>
 
-# **Consensus Layer**
+# 3.Introduction
+With the development of modular technologies like rollups and data availability (DA), blockchain architecture has evolved to adopt new design philosophies. Modularity enhances blockchain scalability not only through the "divide and conquer" approach but also by making sharding, which was previously difficult to implement on monolithic chains, a reality. Sharding is considered as the ultimate solution to the blockchain trilemma. It allows blockchains to significantly scale while preserving decentralization, increasing scalability by tens or even hundreds of times.
+
+Dill is a new paradigm chain built on modular and sharding technologies. The entire chain consists of the following modules:
+
+- Base Layer: This is a DA network similar to Celestia, consisting of a consensus layer and a data layer. It is composed of hundreds of thousands to millions of validators, ensuring the security of the entire chain by maintaining consensus and data availability.
+- Settlement Layer: Built on top of the base layer, this layer is responsible for aggregation of settlements and proofs.
+- Execution Layer: The execution layer is made up of individual sequencers, with each application having its own dedicated sequencer.
+- Bridge: A minimal-trust native verification bridge ensures interoperability between applications.
+
+Dill introduces the concept of sharding to each layer:
+
+- Consensus Layer: By introducing a committee mechanism for validators, Dill shards the consensus layer by slots, supporting up to a million validators. Combined with Dill's full and light validator modes, it achieves 3-slot fast finality (36 seconds).
+- Data Layer: Using 2D EC and KZG-based DAS and subnet sharding, Dill supports a maximum of 512MB blob blocks per slot.
+- Execution Layer: Through dedicated execution environments for each application, Dill effectively implements sharding at the application level on the execution layer, providing infinite scalability. This app-dedicated sequencer model provides sovereignty to applications in the lightest way possible.
+
+
+# 4.Consensus Layer
 
 ## Goal
 
@@ -144,7 +183,7 @@ Dill adopts a 3-slot finality consensus mechanism based on LMD GHOST and Casper 
 * **Slot Latency Optimization**:  
   Requiring fewer validators per slot creates the potential to further reduce slot latency. This improvement not only shortens finality times but also boosts the network's overall data throughput.
 
-# Data Layer
+# 5.Data Layer
 
 The data layer ensures the complete publication of data blocks across the network. In a modular architecture, the data layer receives and processes transaction blocks packaged by the execution layer, providing reliable data download and state reconstruction capabilities for execution-layer validators and users.
 
@@ -196,7 +235,7 @@ Figure : 2D EC Encoding
 
 In an n×m dataset with 2D EC, the probability of a DAS node detecting at least one hidden point after s samples is:  
 <div align="center">
-<img src="./images/image8.png" width="60%" />
+<img src="./images/image8.png" width="40%" />
 </div>
 
 Assuming n=1024 and m=64, when s\>96, the probability of failing to detect hidden data is less than 10^−13.
@@ -208,7 +247,7 @@ In the 2D EC scenario, a DAS node only needs to sample one data point, significa
 Dill employs a multi-DAS node sampling approach. In the event of data unavailability, more than 1/3 of the nodes must detect the unavailability. The probability of at least k out of c sampling nodes detecting data unavailability is:
 
 <div align="center">
-<img src="./images/image9.png" width="60%" />
+<img src="./images/image9.png" width="40%" />
 </div>
 
 Assuming 10 nodes perform sampling simultaneously, with each node having a 10^−13 probability of failing to detect hidden data, the probability that 4 or more nodes detect the issue exceeds 1-10^−68. Thus, the probability of failing to detect data unavailability (with only 0–3 nodes identifying the issue) is less than 10^−68, which is far less than 10^−13.
@@ -226,7 +265,7 @@ Dill employs KZG polynomial commitments to address these issues:
 2. KZG polynomial commitments can validate the EC extension relationship, effectively ensuring that the extended data is indeed an EC extension of the original data.
 
 <div align="center">
-<img src="./images/image10.png" width="60%" />
+<img src="./images/image10.png" width="40%" />
 </br>
 Figure: DA Sampling by Light Validators
 </div>
@@ -317,8 +356,8 @@ Figure: Full Validator Joins Subnets, Column Sampling
 1. Synchronizing 512MiB of data across the entire network is optimized to synchronize only 2MiB of data within each subnet.  
 2. The proposer's task of completing the 2D EC extension and KZG commitment and proof generation for 512MiB of data is reduced to completing only the 1D EC extension and KZG commitment and proof generation for 2MiB of data, which can be completed in approximately 200ms.
 
-# Applications
-Beyond Dill's technical architecture, we can explore its potential use cases, particularly in the scalable and sovereign realms.
+# 6.Applications
+Beyond Dill's technical architecture, we can explore its potential use cases, particularly in the scalability and sovereignty realms. Below are some of the potential notable use cases:
 
 ## Agentic Layers
 Blockchains provide an ideal environment for AI agent interactions due to their consensus mechanism and programmable intermediate layers. These features enable agents to express and execute actions while ensuring transactions are verifiable by both humans and agents.
@@ -339,7 +378,7 @@ Current on-chain games are also hindered by fragmented ecosystems. Players often
 
 In conclusion, Dill's unique offering serves as a catalyst for fully on-chain gaming adoption, addressing the technical challenges and offering a more connected, flexible, and scalable solution for both developers and players.
 
-# Conclusion
+# 7.Conclusion
 The Dill network introduces a new paradigm that maximizes scalability, sovereignty, and decentralization simultaneously. Its base layer is shared across all execution spaces, providing consensus and security for the entire network. With a two-tiered staking architecture, Dill promotes decentralization by lowering both technical and capital barriers to entry. This structure enables up to 1 million solo stakers to participate and secure the network.
 
 Ultimately, Dill aims to align incentives between dApps, users, and validators, creating a dynamic network that accelerates the application layer and paves the way for the next generation of blockchains.  
