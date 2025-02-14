@@ -99,7 +99,7 @@ Committee members are randomly selected at regular intervals. The larger the com
 
 
 <div align="center">
-<img src="./images/image2.png" width="40%" />
+<img src="./images/image2.png" width="35%" />
 </div>
 
 **Finality Solution Based on Committees**  
@@ -335,7 +335,7 @@ Dill achieves a significant reduction in proposer build and propagate time by pa
 Dill divides full validators into 128 subnets. For example, with 16,000 full validators, each subnet contains approximately 128 full validator nodes.
 
 <div align="center">
-<img src="./images/image11.png" width="40%" />
+<img src="./images/image11.png" width="35%" />
 </br>
 Figure: Full Validator Joins Subnets, Column Sampling
 </div>
@@ -382,5 +382,5 @@ The Dill network introduces a new paradigm that maximizes scalability, sovereign
 Ultimately, Dill aims to align incentives between dApps, users, and validators, creating a dynamic network that accelerates the application layer and paves the way for the next generation of blockchains.  
 
 # References
-[1] https://ethereum.org/en/developers/docs/scaling
-[2] https://github.com/solana-labs/whitepaper/blob/master/solana-whitepaper-en.pdf
+- [1] https://ethereum.org/en/developers/docs/scaling/
+- [2] https://github.com/solana-labs/whitepaper/blob/master/solana-whitepaper-en.pdf
