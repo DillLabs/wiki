@@ -5,9 +5,11 @@ Dill
 
 **Dill Foundation**
 
-*Version 0.1, Feb 13, 2025*
+*Version 0.1*
 
-# Abstract
+*Feb 13, 2025*
+
+## Abstract
 
 We propose Dill, a new paradigm chain based on a modular and sharded architecture, capable of achieving maximum scalability, sovereignty, and decentralization:
 
@@ -16,6 +18,7 @@ We propose Dill, a new paradigm chain based on a modular and sharded architectur
 - Maximum decentralization: Dill supports up to 1 million validators while maintaining low barriers for staking and node operation, making it accessible to solo stakers.
 
 The protocol combines the advantages of both solutions by adopting a modular internal structure while maintaining an externally unified architecture. This approach ensures the high scalability, sovereignty and decentralization that modularity brings while avoiding the ecosystem fragmentation caused by Layer 2.
+
 
 # 1. Introduction
 
@@ -56,9 +59,13 @@ Dill is a new paradigm chain built on modular and sharding technologies. The ent
 - Execution Layer: The execution layer is made up of individual sequencers, with each application having its own dedicated sequencer.
 - Bridge: A minimal-trust native verification bridge ensures interoperability between applications.
 
+
 <div align="center">
 <img src="./images/image1.jpg" width="60%" />
+</br>
+Figure: Dill Architecture
 </div>
+
 
 Recent advancements in modular technologies like rollups and data availability (DA) have made the implementation of sharding feasible, opening up new design philosophies for blockchain architecture.  Modularity enhances blockchain scalability not only through the "divide and conquer" approach but also by making sharding, which was previously difficult to implement on monolithic chains, a reality. Sharding is considered as the ultimate solution to the blockchain trilemma. It allows blockchains to significantly scale while preserving decentralization, increasing scalability by tens or even hundreds of times. And below is how Dill implements sharding in each layer:
 
