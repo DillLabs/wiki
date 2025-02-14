@@ -15,7 +15,7 @@ We propose Dill, a new paradigm chain based on a modular and sharded architectur
 - Maximum sovereignty: Each application deployed on Dill has its own dedicated execution environment, allowing it to capture the value of the execution layer while enabling custom execution environments.
 - Maximum decentralization: Dill supports up to 1 million validators while maintaining low barriers for staking and node operation, making it accessible to solo stakers.
 
-The protocol combines the advantages of both solutions by adopting a modular internal structure while maintaining an externally unified architecture. This approach ensures the high scalability and decentralization that modularity brings while avoiding the ecosystem fragmentation caused by Layer 2.
+The protocol combines the advantages of both solutions by adopting a modular internal structure while maintaining an externally unified architecture. This approach ensures the high scalability, sovereignty and decentralization that modularity brings while avoiding the ecosystem fragmentation caused by Layer 2.
 
 # 1. Introduction
 
