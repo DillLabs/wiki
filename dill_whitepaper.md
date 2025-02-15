@@ -120,7 +120,7 @@ If the validator set is divided across 32 (with each slot supporting 32,000 vali
 To put this into perspectives, currently, Lido accounts for nearly 30% of Ethereum's staked tokens, primarily due to two factors: 1\) High staking requirements and maintenance costs make it unfriendly for solo stakers. 2\) Liquid staking pools exhibit significant network effects, favoring centralization and top players.
 
 <div align="center">
-<img src="./images/image3.png" width="60%" />  
+<img src="./images/image3.png" width="40%" />  
 </div>
 
 Dill addresses these issues through the following strategies: 
@@ -166,18 +166,6 @@ Dill's base layer focuses solely on consensus mechanisms and data networking, co
 
 Under the two-tiered staking architecture, light validators take this further by fully adopting a stateless design, optimizing scalability and minimizing operational costs.
 
-### 2.6.1 Verkle Tree
-
-The Verkle Tree is an innovative, provable data structure that serves as an advanced version of the Merkle Tree. Its defining feature is the use of polynomial commitment mechanisms. Unlike traditional Merkle Trees, the Verkle Tree does not rely on sibling nodes to generate proofs. This characteristic significantly enhances proof space efficiency in scenarios involving large-scale tree structures.
-
-<div align="center">
-<img src="./images/image4.png" width="45%" />
-</div>
-
-Another key advantage of the polynomial commitment mechanism lies in its state update capability: the system can calculate a new state root directly based on the state changes of a single node without accessing sibling node states. This feature enables Verkle Trees to effectively support the implementation of stateless nodes. In practical applications, nodes only need to combine the state root of the current block, new transaction blocks, and the current state of relevant addresses to compute and verify the correctness of the new state root. 
-
-In Dill's architectural design, the decoupling of the execution layer simplifies state computation. This characteristic provides a solid foundation for the practical application of Verkle Trees, significantly reducing the complexity of engineering implementation.
-
 ## 2.7 Three-Slot Finality
 
 Dill adopts a 3-slot finality consensus mechanism based on LMD GHOST and Casper FFG. Compared to the single-slot finality approach, this mechanism increases finality time from 28 seconds to 36 seconds but offers the following advantages:
@@ -215,13 +203,13 @@ For data of size 1×m, 1D EC expands it to m+m. This allows recovery of the orig
 In a 1D EC hidden data detection scenario, the probability of a single DAS node detecting at least one hidden segment after s samples is:
 
 <div align="center">
-<img src="./images/image5.png" width="50%" />
+<img src="./images/image5.png" width="40%" />
 </div>
 
 Assuming m=64, when s\>33, the probability of failing to detect hidden data is less than 10^-13. With a block time of 12 seconds, this means a false-negative event would occur approximately once in 4 million years.
 
 <div align="center">
-<img src="./images/image6.png" width="40%" />  
+<img src="./images/image6.png" width="45%" />  
 </br>
 Figure: 1D EC Encoding
 </div>  
@@ -234,14 +222,14 @@ In a scenario with n×m data, assuming n=1024, using 1D EC, a malicious node onl
 2D EC expands data in both row and column directions. To hide one point of data, an attacker must simultaneously hide data in both row and column directions. Hidden row data must further hide column data, and hidden column data must further hide row data. Ultimately, even hiding a single data point requires hiding at least 1/4 of the data.
 
 <div align="center">
-<img src="./images/image7.png" width="45%" />
+<img src="./images/image7.png" width="35%" />
 </br>
 Figure : 2D EC Encoding  
 </div>  
 
 In an n×m dataset with 2D EC, the probability of a DAS node detecting at least one hidden point after s samples is:  
 <div align="center">
-<img src="./images/image8.png" width="40%" />
+<img src="./images/image8.png" width="35%" />
 </div>
 
 Assuming n=1024 and m=64, when s\>96, the probability of failing to detect hidden data is less than 10^−13.
@@ -342,7 +330,7 @@ Dill achieves a significant reduction in proposer build and propagate time by pa
 Dill divides full validators into 128 subnets. For example, with 16,000 full validators, each subnet contains approximately 128 full validator nodes.
 
 <div align="center">
-<img src="./images/image11.png" width="35%" />
+<img src="./images/image11.png" width="65%" />
 </br>
 Figure: Full Validator Joins Subnets, Column Sampling
 </div>
