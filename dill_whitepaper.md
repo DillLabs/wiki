@@ -106,7 +106,7 @@ Committee members are randomly selected at regular intervals. The larger the com
 
 
 <div align="center">
-<img src="./images/image2.png" width="35%" />
+<img src="./images/image2.png" width="45%" />
 </div>
 
 **Finality Solution Based on Committees**  
@@ -203,7 +203,7 @@ For data of size 1×m, 1D EC expands it to m+m. This allows recovery of the orig
 In a 1D EC hidden data detection scenario, the probability of a single DAS node detecting at least one hidden segment after s samples is:
 
 <div align="center">
-<img src="./images/image5.png" width="40%" />
+<img src="./images/image5.png" width="35%" />
 </div>
 
 Assuming m=64, when s\>33, the probability of failing to detect hidden data is less than 10^-13. With a block time of 12 seconds, this means a false-negative event would occur approximately once in 4 million years.
@@ -330,7 +330,7 @@ Dill achieves a significant reduction in proposer build and propagate time by pa
 Dill divides full validators into 128 subnets. For example, with 16,000 full validators, each subnet contains approximately 128 full validator nodes.
 
 <div align="center">
-<img src="./images/image11.png" width="65%" />
+<img src="./images/image11.png" width="60%" />
 </br>
 Figure: Full Validator Joins Subnets, Column Sampling
 </div>
