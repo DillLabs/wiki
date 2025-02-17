@@ -27,7 +27,7 @@ Ethereum revolutionized blockchain by separating application logic through virtu
 - The blockchain trilemma—balancing scalability, security, and decentralization—limits blockchain systems to achieving only two of these three properties at a time. This often results in either scalability or decentralization being prioritized, while the other is sacrificed.
 - Applications lost sovereignty as they transitioned from dedicated resources to shared blockchain infrastructure, leading to the phenomenon of "fat protocols, thin applications," where the value and functionality of applications were constrained by the limitations of the underlying platform.
 
-In response to these challenges, Ethereum initially attempted to solve the trilemma with sharding, but the monolithic design proved unfit for implementation. As a result, Ethereum shifted to a rollup-centric modular solution to address scalability, at the cost of ecosystem fragmentation. On the other hand, high-performance chains like Solana continue to stick with monolithic chain design. achieving higher scalability by sacrificing decentralization, supporting thousands to tens of thousands of TPS.
+In response to these challenges, Ethereum initially attempted to solve the trilemma with sharding, but the monolithic design proved unfit for implementation. As a result, Ethereum shifted to a rollup-centric modular solution to address scalability, at the cost of ecosystem fragmentation. On the other hand, high-performance chains like Solana continue to stick with a monolithic chain design, achieving higher scalability by sacrificing decentralization, supporting thousands to tens of thousands of TPS.
 
 Both approaches have their respective strengths and weaknesses:
 
@@ -117,7 +117,7 @@ If the validator set is divided across 32 (with each slot supporting 32,000 vali
 1. Lower the likelihood of a single entity controlling 51% of the nodes.  
 2. Increase the amount of staked tokens within a single slot to raise the slashing cost of an attack.
 
-To put this into perspectives, currently, Lido accounts for nearly 30% of Ethereum's staked tokens, primarily due to two factors: 1\) High staking requirements and maintenance costs make it unfriendly for solo stakers. 2\) Liquid staking pools exhibit significant network effects, favoring centralization and top players.
+To put this into perspective, currently, Lido accounts for nearly 30% of Ethereum's staked tokens, primarily due to two factors: 1\) High staking requirements and maintenance costs make it unfriendly for solo stakers. 2\) Liquid staking pools exhibit significant network effects, favoring centralization and top players.
 
 <div align="center">
 <img src="./images/image3.png" width="40%" />  
